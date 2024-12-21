@@ -1,0 +1,32 @@
+#!/bin/bash
+
+FILES_TO_CLEAN=(
+    "fork-example-1"
+    "mutex-example-1"
+    "pipe-example-1"
+    "task-0.5"
+    "task-2"
+    "task-4"
+    "thread-example-1"
+    "cpu-reordering"
+    "task-1"
+    "task-3"
+    "thread-example"
+    "mutex-example"
+    "pipe-example"
+    "fork-example"
+)
+
+# Function to remove specified files and directories
+clean_files() {
+    for file in "${FILES_TO_CLEAN[@]}"; do
+        if [ -e "$file" ]; then
+            rm -rf "$file"
+            echo "Removed $file"
+        fi
+    done
+}
+
+clean_files
+
+echo "Clean up completed."
